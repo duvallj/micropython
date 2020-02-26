@@ -88,7 +88,7 @@ typedef struct _strn_print_env_t {
     char *cur;
     size_t remain;
 } strn_print_env_t;
-
+/*
 STATIC void strn_print_strn(void *data, const char *str, size_t len) {
     strn_print_env_t *strn_print_env = data;
     if (len > strn_print_env->remain) {
@@ -98,14 +98,6 @@ STATIC void strn_print_strn(void *data, const char *str, size_t len) {
     strn_print_env->cur += len;
     strn_print_env->remain -= len;
 }
-
-#if defined(__GNUC__) && !defined(__clang__) && __GNUC__ < 9
-// uClibc requires this alias to be defined, or there may be link errors
-// when linkings against it statically.
-// GCC 9 gives a warning about missing attributes so it's excluded until
-// uClibc+GCC9 support is needed.
-int __GI_vsnprintf(char *str, size_t size, const char *fmt, va_list ap) __attribute__((weak, alias ("vsnprintf")));
-#endif
 
 int vsnprintf(char *str, size_t size, const char *fmt, va_list ap) {
     strn_print_env_t strn_print_env = {str, size};
@@ -121,7 +113,7 @@ int vsnprintf(char *str, size_t size, const char *fmt, va_list ap) {
     }
     return len;
 }
-
+*/
 int snprintf(char *str, size_t size, const char *fmt, ...) {
     va_list ap;
     va_start(ap, fmt);

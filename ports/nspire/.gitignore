@@ -1,0 +1,5 @@
+micropython
+micropython.tns
+micropython-*
+*.py
+*.gcov

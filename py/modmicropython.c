@@ -141,7 +141,7 @@ STATIC MP_DEFINE_CONST_FUN_OBJ_1(mp_alloc_emergency_exception_buf_obj, mp_alloc_
 
 #if MICROPY_KBD_EXCEPTION
 STATIC mp_obj_t mp_micropython_kbd_intr(mp_obj_t int_chr_in) {
-    mp_hal_set_interrupt_char(mp_obj_get_int(int_chr_in));
+    //mp_hal_set_interrupt_char(mp_obj_get_int(int_chr_in));
     return mp_const_none;
 }
 STATIC MP_DEFINE_CONST_FUN_OBJ_1(mp_micropython_kbd_intr_obj, mp_micropython_kbd_intr);
